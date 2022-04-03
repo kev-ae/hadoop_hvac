@@ -21,4 +21,4 @@ for entry in sys.stdin:
     diff = abs(target_temp - actual_temp)
 
     # send to reducer the buiding id, system, temperature difference, and count for avg
-    print '%s\t%s\t%s\t%s' % (data[6], data[4], diff, 1)
+    print '%s:%s\t%s\t%s' % (data[6], data[4], diff, 1)

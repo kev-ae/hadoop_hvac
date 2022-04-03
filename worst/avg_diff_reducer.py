@@ -15,7 +15,10 @@ for line in sys.stdin:
     line = line.strip()
 
     # parse the input
-    building, system, diff, count = line.split('\t', 4)
+    building_system, diff, count = line.split('\t', 3)
+    temp = building_system.split(':')
+    building = temp[0]
+    system = temp[1]
 
     # typecast count and diff to int, ignore/discard if not a number
     try:
@@ -31,15 +34,15 @@ for line in sys.stdin:
     else:
         if curr_building and curr_system:
             avg = sum / curr_count
-            print 'BuildingID: %s\tSystem: %s\tAverage: %s' % (curr_building, curr_system, avg)
+            print '%s (BuildingID: %s System: %s)' % (avg, curr_building, curr_system)
         
         # reset variables
         curr_count = count
         curr_building = building
         curr_system = system
-        sum = 0
+        sum = diff
 
 # print last entry
 if curr_building == building and curr_system == system:
     avg = sum / curr_count
-    print 'BuildingID: %s\tSystem: %s\tAverage: %s' % (curr_building, curr_system, avg)
+    print '%s (BuildingID: %s System: %s)' % (avg, curr_building, curr_system)
