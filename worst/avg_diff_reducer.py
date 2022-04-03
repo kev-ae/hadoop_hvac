@@ -22,8 +22,8 @@ for line in sys.stdin:
 
     # typecast count and diff to int, ignore/discard if not a number
     try:
-        count = int(count)
-        diff = int(diff)
+        count = float(count)
+        diff = float(diff)
     except ValueError:
         continue
 
@@ -34,7 +34,7 @@ for line in sys.stdin:
     else:
         if curr_building and curr_system:
             avg = sum / curr_count
-            print '%s (BuildingID: %s System: %s)' % (avg, curr_building, curr_system)
+            print '%s\t(BuildingID: %s\tSystem: %s)' % (avg, curr_building, curr_system)
         
         # reset variables
         curr_count = count
@@ -45,4 +45,4 @@ for line in sys.stdin:
 # print last entry
 if curr_building == building and curr_system == system:
     avg = sum / curr_count
-    print '%s (BuildingID: %s System: %s)' % (avg, curr_building, curr_system)
+    print '%s\t(BuildingID: %s\tSystem: %s)' % (avg, curr_building, curr_system)
