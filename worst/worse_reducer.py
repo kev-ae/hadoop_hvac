@@ -20,7 +20,7 @@ for line in sys.stdin:
     building = temp[0]
     system = temp[1]
 
-    # typecast count and diff to int, ignore/discard if not a number
+    # typecast count and diff to float, ignore/discard if not a number
     try:
         count = float(count)
         diff = float(diff)
