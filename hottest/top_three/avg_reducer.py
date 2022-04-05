@@ -29,10 +29,10 @@ for line in sys.stdin:
             avg = sum / cur_count
             print '%s\t (BuildingID: %s)' % (avg, cur_building)
 
-            # reset variables
-            cur_count = count
-            sum = temp
-            cur_building = building
+        # reset variables
+        cur_count = count
+        sum = temp
+        cur_building = building
 
 # print last entry
 if cur_building == building:

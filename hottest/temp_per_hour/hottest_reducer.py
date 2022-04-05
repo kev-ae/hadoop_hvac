@@ -33,15 +33,15 @@ for line in sys.stdin:
     else:
         if cur_building and cur_hour:
             avg = sum / cur_count
-            print '%s\t(BuildingID: %s\tHour: %s)' % (avg, cur_building, cur_hour)
+            print '%s,%s,%s' % (cur_building, cur_hour, avg)
 
-            # reset variables
-            cur_count = count
-            cur_building = building
-            cur_hour = hour
-            sum = temp
+        # reset variables
+        cur_count = count
+        cur_building = building
+        cur_hour = hour
+        sum = temp
 
 # print last entry
 if cur_building == building and cur_hour == hour:
     avg = sum / cur_count
-    print '%s\t(BuildingID: %s\tHour: %s)' % (avg, cur_building, cur_hour)
+    print '%s,%s,%s' % (cur_building, cur_hour, avg)

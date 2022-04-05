@@ -25,5 +25,5 @@ for entry in sys.stdin:
 
     # check if time is between a 9-5 work shift
     if shift_start <= date <= shift_end:
-        # building id, hour, temperature, count
-        print '%s:%s\t%s\t%s\t%s' % (data[6], date.hour, data[3], 1)
+        # building id, temperature, count
+        print '%s\t%s\t%s' % (data[6], data[3], 1)
