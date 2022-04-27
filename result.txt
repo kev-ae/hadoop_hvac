@@ -1,2 +1,0 @@
-worst:
-    result: Top 3 worst systems are (BuildingID: 2 System: 12) (BuildingID: 7 System: 17) (BuildingID: 14 System: 15)
